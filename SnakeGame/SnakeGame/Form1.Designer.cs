@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picGameBoard = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picGameBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +41,11 @@
             this.picGameBoard.Size = new System.Drawing.Size(420, 420);
             this.picGameBoard.TabIndex = 0;
             this.picGameBoard.TabStop = false;
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 500;
             // 
             // frmSnake
             // 
@@ -56,6 +63,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picGameBoard;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
