@@ -112,5 +112,37 @@ namespace SnakeGame
             gameBoardField[x, y] = GameBoardFields.Bonus;
             g.DrawImage(imgList.Images[imgIndex], x * 35, y * 35);
         }
+
+        private void frmSnake_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.Up:
+                    direction = Directions.Up;
+                    break;
+
+                case Keys.Down:
+                    direction = Directions.Down;
+                    break;
+
+                case Keys.Left:
+                    direction = Directions.Left;
+                    break;
+
+                case Keys.Right:
+                    direction = Directions.Right;
+                    break;
+
+            }
+        }
+
+        private void Gameover()
+        {
+            timer.Enabled = false;
+            MessageBox.Show("GAME OVER");
+
+        }
+
+
     }
 }

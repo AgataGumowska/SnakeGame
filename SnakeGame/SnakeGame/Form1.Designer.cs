@@ -70,6 +70,7 @@
             this.Name = "frmSnake";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmSnake_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSnake_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picGameBoard)).EndInit();
             this.ResumeLayout(false);
 
