@@ -149,7 +149,17 @@ namespace SnakeGame
                 snakeXY[snakeLength - 1].y * 35, 35, 35);
             gameBoardField[snakeXY[snakeLength - 1].x, snakeXY[snakeLength - 1].y] = GameBoardFields.Free;
 
-            // przemieszczanie się węża po polu
+            // przemieszczanie się po polu
+
+            for(int i = snakeLength; i>=1; i--)
+            {
+                snakeXY[i].x = snakeXY[i - 1].x;
+                snakeXY[i].y = snakeXY[i - 1].y;
+            }
+
+            g.DrawImage(imgList.Images[4], snakeXY[0].x * 35, snakeXY[0].y * 35);
+            picGameBoard.Refresh();
+
         }
     }
 }
