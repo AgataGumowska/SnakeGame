@@ -71,6 +71,29 @@ namespace SnakeGame
                 g.DrawImage(imgList.Images[6], 385, i * 35);
             }
 
+            snakeXY[0].x = 5; //głowa
+            snakeXY[0].y = 5;
+            snakeXY[1].x = 5; // pierwsza część tułowia
+            snakeXY[1].y = 6;
+            snakeXY[2].x = 5; // druga część tułowia
+            snakeXY[2].y = 7;
+
+
+            g.DrawImage(imgList.Images[5], 5 * 35, 5 * 35); // głowa
+            g.DrawImage(imgList.Images[4], 5 * 35, 6 * 35); // pierwsza część tułowia
+            g.DrawImage(imgList.Images[4], 5 * 35, 7 * 35); // druga część tułowia
+
+            gameBoardField[5, 5] = GameBoardField.Snake;
+            gameBoardField[5, 6] = GameBoardField.Snake;
+            gameBoardField[5, 7] = GameBoardField.Snake;
+
+            direction = Directions.Up;
+            snakeLength = 3;
+
+            for(int i = 0; i<4; i++)
+            {
+                Bonus();
+            }
         }
     }
 }

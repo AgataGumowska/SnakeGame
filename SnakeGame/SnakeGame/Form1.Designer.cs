@@ -57,8 +57,8 @@
             this.imgList.Images.SetKeyName(1, "bonus2.png");
             this.imgList.Images.SetKeyName(2, "bonus3.png");
             this.imgList.Images.SetKeyName(3, "bonus4.png");
-            this.imgList.Images.SetKeyName(4, "głowa.png");
-            this.imgList.Images.SetKeyName(5, "tułów.png");
+            this.imgList.Images.SetKeyName(4, "tułów.png");
+            this.imgList.Images.SetKeyName(5, "głowa.png");
             this.imgList.Images.SetKeyName(6, "ściana.png");
             // 
             // frmSnake
