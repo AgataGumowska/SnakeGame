@@ -160,6 +160,23 @@ namespace SnakeGame
             g.DrawImage(imgList.Images[4], snakeXY[0].x * 35, snakeXY[0].y * 35);
             picGameBoard.Refresh();
 
+            //zmiana kierunku glowy
+
+            switch(direction)
+            {
+                case Directions.Up:
+                    snakeXY[0].y = snakeXY[0].y - 1;
+                    break;
+                case Directions.Down:
+                    snakeXY[0].y = snakeXY[0].y + 1;
+                    break; 
+                case Directions.Left:
+                    snakeXY[0].x = snakeXY[0].x - 1;
+                    break;
+                case Directions.Right:
+                    snakeXY[0].x = snakeXY[0].x + 1;
+                    break;
+            }
         }
     }
 }
