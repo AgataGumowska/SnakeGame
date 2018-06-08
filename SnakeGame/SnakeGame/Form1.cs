@@ -55,7 +55,7 @@ namespace SnakeGame
         {
             picGameBoard.Image = new Bitmap(420, 420);
             g = Graphics.FromImage(picGameBoard.Image);
-            g.Clear(Color.Beige);
+            g.Clear(Color.White);
 
             for (int i=1; i<=10; i++)
             {
@@ -64,7 +64,7 @@ namespace SnakeGame
                 g.DrawImage(imgList.Images[6], i * 35, 385);
             }
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 0; i <= 11; i++)
             {
                 //lewa prawa ściana
                 g.DrawImage(imgList.Images[6], 0, i * 35);
