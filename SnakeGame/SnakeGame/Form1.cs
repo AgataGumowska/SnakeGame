@@ -13,7 +13,7 @@ namespace SnakeGame
     public partial class frmSnake : Form
     {
         Random rand;
-        enum GameBoardFiels
+        enum GameBoardField
         {
             Free,
             Snake,
@@ -35,7 +35,7 @@ namespace SnakeGame
         };
 
 
-        GameBoardFiels[,] gameBoardFiels;
+        GameBoardField[,] gameBoardField;
         SnakeCoordinates[] snakeXY;
         int snakeLength;
         Directions direction;
@@ -46,6 +46,9 @@ namespace SnakeGame
         public frmSnake()
         {
             InitializeComponent();
+            gameBoardField = new GameBoardField[11, 11];
+            snakeXY = new SnakeCoordinates[100];
+            rand = new Random();
         }
 
         private void frmSnake_Load(object sender, EventArgs e)
