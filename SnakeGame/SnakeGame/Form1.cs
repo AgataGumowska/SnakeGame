@@ -96,10 +96,10 @@ namespace SnakeGame
             }
         }
 
-     private void Bonus()
+        private void Bonus()
         {
-        int x, y;
-        var imgIndex = rand.Next(0, 4);
+            int x, y;
+            var imgIndex = rand.Next(0, 4);
 
             do
             {
@@ -115,7 +115,7 @@ namespace SnakeGame
 
         private void frmSnake_KeyDown(object sender, KeyEventArgs e)
         {
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.Up:
                     direction = Directions.Up;
@@ -151,7 +151,7 @@ namespace SnakeGame
 
             // przemieszczanie się po polu
 
-            for(int i = snakeLength; i>=1; i--)
+            for (int i = snakeLength; i >= 1; i--)
             {
                 snakeXY[i].x = snakeXY[i - 1].x;
                 snakeXY[i].y = snakeXY[i - 1].y;
@@ -162,14 +162,14 @@ namespace SnakeGame
 
             //zmiana kierunku glowy
 
-            switch(direction)
+            switch (direction)
             {
                 case Directions.Up:
                     snakeXY[0].y = snakeXY[0].y - 1;
                     break;
                 case Directions.Down:
                     snakeXY[0].y = snakeXY[0].y + 1;
-                    break; 
+                    break;
                 case Directions.Left:
                     snakeXY[0].x = snakeXY[0].x - 1;
                     break;
@@ -179,18 +179,30 @@ namespace SnakeGame
             }
 
             // zderzenie się ze ścianą
-            if (snakeXY[0].x < 1 || snakeXY[0].x > 10 || snakeXY[0].y < 1 || snakeXY[0].y > 10 )
+            if (snakeXY[0].x < 1 || snakeXY[0].x > 10 || snakeXY[0].y < 1 || snakeXY[0].y > 10)
             {
                 Gameover();
                 picGameBoard.Refresh();
                 return;
             }
             // zderzenie ze swoim ciałem
-            if ( gameBoardField[snakeXY[0].x, snakeXY[0].y] == GameBoardFields.Snake)
+            if (gameBoardField[snakeXY[0].x, snakeXY[0].y] == GameBoardFields.Snake)
             {
                 Gameover();
                 picGameBoard.Refresh();
                 return;
+            }
+
+            //zjedzenie bonusa
+            if (gameBoardField[snakeXY[0].x, snakeXY[0].y] == GameBoardFields.Bonus)
+            {
+                g.DrawImage(imgList.Images[4], snakeXY[snakeLength].x * 35, snakeXY[snakeLength].y * 35);
+                gameBoardField[snakeXY[snakeLength].x, snakeXY[snakeLength].y] = GameBoardFields.Snake;
+                snakeLength++;
+
+                if (snakeLength < 96)
+                    Bonus();
+                this.Text = "Snake - score: " + snakeLength;
             }
         }
     }
