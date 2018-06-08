@@ -143,6 +143,12 @@ namespace SnakeGame
 
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            g.FillRectangle(Brushes.White, snakeXY[snakeLength - 1].x * 35,
+                snakeXY[snakeLength - 1].y * 35, 35, 35);
+            gameBoardField[snakeXY[snakeLength - 1].x, snakeXY[snakeLength - 1].y] = GameBoardFields.Free;
 
+        }
     }
 }

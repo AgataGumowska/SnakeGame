@@ -48,6 +48,7 @@
             // 
             this.timer.Enabled = true;
             this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // imgList
             // 
@@ -58,7 +59,7 @@
             this.imgList.Images.SetKeyName(2, "bonus3.png");
             this.imgList.Images.SetKeyName(3, "bonus4.png");
             this.imgList.Images.SetKeyName(4, "tułów.png");
-            this.imgList.Images.SetKeyName(5, "głowa.png");
+            this.imgList.Images.SetKeyName(5, "głowaa.png");
             this.imgList.Images.SetKeyName(6, "ściana.png");
             // 
             // frmSnake
