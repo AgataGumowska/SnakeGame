@@ -53,6 +53,23 @@ namespace SnakeGame
 
         private void frmSnake_Load(object sender, EventArgs e)
         {
+            picGameBoard.Image = new Bitmap(420, 420);
+            g = Graphics.FromImage(picGameBoard.Image);
+            g.Clear(Color.Beige);
+
+            for (int i=1; i<=10; i++)
+            {
+                //górna dolna ściana
+                g.DrawImage(imgList.Images[6], i * 35, 0);
+                g.DrawImage(imgList.Images[6], i * 35, 385);
+            }
+
+            for (int i = 1; i <= 10; i++)
+            {
+                //lewa prawa ściana
+                g.DrawImage(imgList.Images[6], 0, i * 35);
+                g.DrawImage(imgList.Images[6], 385, i * 35);
+            }
 
         }
     }
