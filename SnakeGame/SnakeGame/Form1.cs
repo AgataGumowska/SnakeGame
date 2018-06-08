@@ -149,6 +149,7 @@ namespace SnakeGame
                 snakeXY[snakeLength - 1].y * 35, 35, 35);
             gameBoardField[snakeXY[snakeLength - 1].x, snakeXY[snakeLength - 1].y] = GameBoardFields.Free;
 
+            // przemieszczanie się węża po polu
         }
     }
 }
