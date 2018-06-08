@@ -12,9 +12,25 @@ namespace SnakeGame
 {
     public partial class frmSnake : Form
     {
+        Random rand;
+        enum GameBoardFiels
+        {
+            Free,
+            Snake,
+            Bonus
+        };
+
+
+
+
         public frmSnake()
         {
             InitializeComponent();
+        }
+
+        private void frmSnake_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
