@@ -204,6 +204,12 @@ namespace SnakeGame
                     Bonus();
                 this.Text = "Snake - score: " + snakeLength;
             }
+
+            //głowa
+
+            g.DrawImage(imgList.Images[5], snakeXY[0].x * 35, snakeXY[0].y * 35);
+            gameBoardField[snakeXY[0].x, snakeXY[0].y] = GameBoardFields.Snake;
+            picGameBoard.Refresh();
         }
     }
 }
