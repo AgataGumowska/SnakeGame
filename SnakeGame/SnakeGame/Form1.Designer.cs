@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSnake));
             this.picGameBoard = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.imgList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picGameBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +48,18 @@
             // 
             this.timer.Enabled = true;
             this.timer.Interval = 500;
+            // 
+            // imgList
+            // 
+            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
+            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList.Images.SetKeyName(0, "bonus1.png");
+            this.imgList.Images.SetKeyName(1, "bonus2.png");
+            this.imgList.Images.SetKeyName(2, "bonus3.png");
+            this.imgList.Images.SetKeyName(3, "bonus4.png");
+            this.imgList.Images.SetKeyName(4, "głowa.png");
+            this.imgList.Images.SetKeyName(5, "ściana.png");
+            this.imgList.Images.SetKeyName(6, "tułów.png");
             // 
             // frmSnake
             // 
@@ -64,6 +78,7 @@
 
         private System.Windows.Forms.PictureBox picGameBoard;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ImageList imgList;
     }
 }
 
