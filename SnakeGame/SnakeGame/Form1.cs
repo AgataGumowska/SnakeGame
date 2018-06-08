@@ -177,6 +177,14 @@ namespace SnakeGame
                     snakeXY[0].x = snakeXY[0].x + 1;
                     break;
             }
+
+            // zderzenie się ze ścianą
+            if (snakeXY[0].x < 1 || snakeXY[0].x > 10 || snakeXY[0].y < 1 || snakeXY[0].y > 10 )
+            {
+                Gameover();
+                picGameBoard.Refresh();
+                return;
+            }
         }
     }
 }
