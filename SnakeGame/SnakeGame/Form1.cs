@@ -28,8 +28,20 @@ namespace SnakeGame
             Right
         };
 
+        struct SnakeCoordinates
+        {
+            public int x;
+            public int y;
+        };
 
 
+        GameBoardFiels[,] gameBoardFiels;
+        SnakeCoordinates[] snakeXY;
+        int snakeLength;
+        Directions direction;
+        Graphics g;
+
+       
 
         public frmSnake()
         {
