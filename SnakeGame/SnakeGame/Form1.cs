@@ -185,6 +185,13 @@ namespace SnakeGame
                 picGameBoard.Refresh();
                 return;
             }
+            // zderzenie ze swoim ciałem
+            if ( gameBoardField[snakeXY[0].x, snakeXY[0].y] == GameBoardFields.Snake)
+            {
+                Gameover();
+                picGameBoard.Refresh();
+                return;
+            }
         }
     }
 }
