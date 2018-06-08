@@ -20,6 +20,14 @@ namespace SnakeGame
             Bonus
         };
 
+        enum Directions
+        {
+            Up,
+            Down,
+            Left,
+            Right
+        };
+
 
 
 
